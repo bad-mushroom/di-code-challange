@@ -9,7 +9,11 @@ class ContactsController extends Controller
 {
     public function store(Request $request)
     {
-        $contact = Contact::create($request->all());
+        $contact = Contact::create($this->validate($request, [
+            'fullname' => 'required',
+            'email'    => 'required|email',
+            'message'  => 'required',
+        ]));
 
         return response($contact, 201);
     }
