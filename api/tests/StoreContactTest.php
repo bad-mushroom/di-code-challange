@@ -8,8 +8,14 @@ class StoreContactTest extends TestCase
 
     public function testAcceptPostForContact()
     {
-        $this->post('/api/contacts');
+        $body = [
+            'fullname' => 'Gwen Stafani',
+            'email'    => 'gwen@nodoubt.com',
+            'message'  => 'hi'
+        ];
 
-        $this->assertResponseOk();
+        $this->post('/api/contacts', $body);
+
+        $this->assertResponseStatus(201);
     }
 }
