@@ -14,8 +14,10 @@ class StoreContactTest extends TestCase
             'message'  => 'hi',
         ];
 
-        $this->post('/api/contacts', $body);
+        $response = $this->post('/api/contacts', $body);
 
-        $this->assertResponseStatus(201);
+        $response->assertResponseStatus(201);
+        $response->assertJson(json_encode($body));
+
     }
 }
