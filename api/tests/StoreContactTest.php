@@ -29,6 +29,6 @@ class StoreContactTest extends TestCase
 
         $response = $this->post('/api/contacts', $body);
 
-        $response->assertResponseStatus(400);
+        $response->assertResponseStatus(422);
     }
 }
