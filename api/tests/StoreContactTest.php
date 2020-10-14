@@ -11,7 +11,7 @@ class StoreContactTest extends TestCase
         $body = [
             'fullname' => 'Gwen Stafani',
             'email'    => 'gwen@nodoubt.com',
-            'message'  => 'hi'
+            'message'  => 'hi',
         ];
 
         $this->post('/api/contacts', $body);
