@@ -18,6 +18,17 @@ class StoreContactTest extends TestCase
 
         $response->assertResponseStatus(201);
         $response->assertJson(json_encode($body));
+    }
 
+    public function testAcceptPostForContactWithFieldValidation()
+    {
+        $body = [
+            'fullname' => 'Gwen Stafani',
+            'message'  => 'hi',
+        ];
+
+        $response = $this->post('/api/contacts', $body);
+
+        $response->assertResponseStatus(400);
     }
 }
