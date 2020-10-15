@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-class ExampleEvent extends Event
+class ContactAdded extends Event
 {
     /**
      * Create a new event instance.
@@ -11,6 +11,6 @@ class ExampleEvent extends Event
      */
     public function __construct()
     {
-        //
+
     }
 }
