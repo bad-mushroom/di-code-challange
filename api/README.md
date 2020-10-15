@@ -1,24 +1,26 @@
-# Lumen PHP Framework
+# Dealer Inspire Code Challange
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+### Email
 
-## Official Documentation
+```
+[2020-10-15 01:07:19] testing.DEBUG: Message-ID: <d500844088632346796f8594cbcc38f1@swift.generated>
+Date: Thu, 15 Oct 2020 01:07:19 +0000
+Subject: Contact Added Email
+From: Example app <hello@example.com>
+To: guy-smiley@example.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+Hey Guy Smiley, you're not going to believe it but you
+have a message from Gwen Stafani. Amazing!!
 
-## Contributing
+She says:
+---
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+i'm stuck in your spiderwebs
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
