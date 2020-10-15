@@ -114,9 +114,27 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Guy Smiley</h2>
-                <p>Remember Guy Smiley?  Yeah, he wants to hear from you.</p>
+                <p>Remember Guy Smiley? Yeah, he wants to hear from you.</p>
                 <p class="bg-primary">
-                    [[ This is where you'd put your contact form.  Get it done! ]]
+                    <form class="text-left">
+                        <div class="form-group">
+                            <label for="fullname" class="required">Full Name</label>
+                            <input type="text" class="form-control" id="fullname" name="fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" name="phone">
+                        </div>
+                         <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="6"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Say "HI" to Guy!</button>
+                    </form>
                 </p>
             </div>
         </div>

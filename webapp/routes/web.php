@@ -13,6 +13,10 @@
 |
 */
 
+$router->get('/', function() {
+    return view('index');
+});
+
 $router->group(['prefix' => 'api'], function() use ($router) {
     $router->post('contacts', 'ContactsController@store');
 });
