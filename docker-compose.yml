@@ -32,7 +32,7 @@ services:
   php-fpm:
     container_name: api-fpm
     build:
-      context: ./api/.config
+      context: ./webapp/.config
       dockerfile: php-fpm.dockerfile
     restart: unless-stopped
     expose:
@@ -46,9 +46,9 @@ services:
     image: nginx:latest
     container_name: api-web
     ports:
-      - ${PORT_API}:80
+      - ${PORT_WEB}:80
     environment:
-      VIRTUAL_HOST: api.dealerinspire.local
+      VIRTUAL_HOST: dealerinspire.local
     restart: unless-stopped
     volumes:
       - ./webapp/.config/nginx.conf:/etc/nginx/conf.d/default.conf
