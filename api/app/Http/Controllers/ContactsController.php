@@ -13,6 +13,7 @@ class ContactsController extends Controller
             'fullname' => 'required',
             'email'    => 'required|email',
             'message'  => 'required',
+            'phone'    => 'nullable',
         ]));
 
         return response($contact, 201);
