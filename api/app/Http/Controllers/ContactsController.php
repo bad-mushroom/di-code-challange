@@ -24,7 +24,7 @@ class ContactsController extends Controller
             'phone'    => 'nullable',
         ]));
 
-        Event::dispatch(new ContactAdded);
+        Event::dispatch(new ContactAdded($contact));
 
         return response()
             ->json($contact, 201);

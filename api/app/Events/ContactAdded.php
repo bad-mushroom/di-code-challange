@@ -2,6 +2,8 @@
 
 namespace App\Events;
 
+use App\Models\Contact;
+
 class ContactAdded extends Event
 {
     /**
@@ -9,8 +11,8 @@ class ContactAdded extends Event
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Contact $contact)
     {
-
+        $this->contact = $contact;
     }
 }
