@@ -102,7 +102,7 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Coffee Break?</h2>
-                    <p>Take a coffee break.  You deserve it.</p>
+                    <p>Take a coffee break. You deserve it.</p>
                     <a href="https://www.youtube.com/dealerinspire" class="btn btn-default btn-lg">or Watch YouTube</a>
                 </div>
             </div>
@@ -116,14 +116,15 @@
                 <h2>Contact Guy Smiley</h2>
                 <p>Remember Guy Smiley? Yeah, he wants to hear from you.</p>
                 <p class="bg-primary">
-                    <form class="text-left">
+                    <div id="contact-form-status" style="display: none;"></div>
+                    <form class="text-left" id="contact-form">
                         <div class="form-group">
                             <label for="fullname" class="required">Full Name</label>
                             <input type="text" class="form-control" id="fullname" name="fullname" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control" id="email" name="email">
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
@@ -131,7 +132,7 @@
                         </div>
                          <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="6"></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Say "HI" to Guy!</button>
                     </form>
@@ -146,7 +147,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p><small>Copyright 2018 Dealer Inspire</small></p>
+            <p><small>Copyright {{ date('Y')}} Dealer Inspire</small></p>
         </div>
     </footer>
 
@@ -164,6 +165,35 @@
 
     <!-- Theme JavaScript -->
     <script src="js/grayscale.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#contact-form').on('submit', function(e) {
+                e.preventDefault();
+
+                $.post('/api/contacts', $('form#contact-form').serialize(), function(data) {
+                    $('#contact-form').fadeOut();
+                    $('#contact-form-status')
+                        .html('You sent Guy Smiley a message!!!!!')
+                        .fadeIn();
+
+                }).fail(function(response) {
+                    $('#contact-form-status')
+                        .html('<p>Uh oh! Something went wrong... Guy will NOT be pleased!</p>')
+                        .fadeIn();
+
+                    $.each(response.responseJSON, function(field, error) {
+                        $('#' + field)
+                            .parent()
+                            .closest('.form-group')
+                            .addClass('has-error');
+
+                            $('#contact-form-status').append(error);
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 
