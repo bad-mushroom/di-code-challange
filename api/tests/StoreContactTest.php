@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\ContactAdded;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
 class StoreContactTest extends TestCase
@@ -8,6 +9,8 @@ class StoreContactTest extends TestCase
 
     public function testAcceptPostForContact()
     {
+        $this->expectsEvents(ContactAdded::class);
+
         $body = [
             'fullname' => 'Gwen Stafani',
             'email'    => 'gwen@nodoubt.com',
