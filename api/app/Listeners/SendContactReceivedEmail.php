@@ -2,11 +2,12 @@
 
 namespace App\Listeners;
 
+use App\Events\ContactAdded;
 use App\Events\ExampleEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class ExampleListener
+class SendContactReceivedEmail
 {
     /**
      * Create the event listener.
@@ -24,7 +25,7 @@ class ExampleListener
      * @param  \App\Events\ExampleEvent  $event
      * @return void
      */
-    public function handle(ExampleEvent $event)
+    public function handle(ContactAdded $event)
     {
         //
     }
