@@ -1,10 +1,12 @@
 <?php
 
 use App\Events\ContactAdded;
+use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
 class StoreContactTest extends TestCase
 {
+    use DatabaseMigrations;
     use DatabaseTransactions;
 
     public function testAcceptPostForContact()
